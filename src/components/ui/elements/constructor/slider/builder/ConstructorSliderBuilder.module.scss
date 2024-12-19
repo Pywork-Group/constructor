@@ -1,0 +1,171 @@
+.box {
+	@apply flex flex-col justify-center items-center gap-12 px-1.5;
+	padding-top: 75px;
+}
+.shirts,
+.shorts {
+	@apply flex items-start;
+}
+.shirts {
+	@apply gap-16;
+}
+.shorts {
+	gap: 130px;
+}
+.shirt,
+.short {
+	@apply relative;
+}
+.logo,
+.smallLogo,
+.bigLogo,
+.number,
+.bigNumber,
+.lastName,
+.shortsLogo {
+	@apply absolute;
+}
+.shirt.last .logo,
+.lastName,
+.shirt .number,
+.bigNumber,
+.bigLogo {
+	@apply w-fit left-0 right-0 mx-auto;
+}
+.number {
+	@apply text-5lg;
+	letter-spacing: 0.05em;
+}
+.shirt .number {
+	top: 70px;
+}
+.short .number {
+	bottom: 20px;
+	right: 10px;
+}
+.shirt.first .logo {
+	top: 70px;
+	left: 48px;
+}
+.short.first .logo {
+	bottom: 13px;
+	left: 0px;
+}
+.shirt.last .logo {
+	top: 18px;
+}
+.lastName {
+	@apply whitespace-nowrap text-6lg;
+	top: 11%;
+}
+.bigNumber {
+	@apply text-2xl;
+	top: 68px;
+}
+.shortsLogo {
+	bottom: 45px;
+	left: 16px;
+}
+.smallLogo {
+	top: 65px;
+	right: 55px;
+}
+.bigLogo {
+	top: 130px;
+}
+
+@media (max-width: 1200px) {
+	.box {
+		@apply gap-4;
+		padding-top: 60px;
+	}
+	.shorts {
+		gap: 125px;
+	}
+	.shirt {
+		max-width: 185px;
+
+		&.first .logo {
+			top: 55px;
+			left: 32px;
+		}
+	}
+	.smallLogo {
+		top: 57px;
+		right: 50px;
+	}
+	.short {
+		max-width: 125px;
+	}
+}
+
+@media (max-width: 800px) {
+	.box {
+		@apply gap-4;
+		padding-top: 90px;
+	}
+	.shirts {
+		@apply gap-6;
+	}
+	.shorts {
+		@apply gap-10;
+	}
+	.shirt {
+		max-width: 85px;
+
+		&.first .logo {
+			width: 34px;
+			top: 22px;
+			left: 10px;
+		}
+
+		&.last .logo {
+			width: 34px;
+			top: 5px;
+		}
+
+		.number {
+			top: 29px;
+		}
+	}
+	.lastName {
+		top: 16%;
+		font-size: 11px;
+	}
+	.bigNumber {
+		top: 26px;
+		font-size: 34px;
+	}
+	.number {
+		font-size: 20px;
+	}
+	.short {
+		max-width: 70px;
+
+		.number {
+			bottom: 9px;
+			right: 5px;
+		}
+
+		&.first .logo {
+			width: 34px;
+			bottom: 5px;
+			left: -2px;
+		}
+	}
+	.shortsLogo {
+		width: 16px;
+		bottom: 23px;
+		left: 9px;
+	}
+	.smallLogo {
+		width: 16px;
+		top: 21px;
+		right: 20px;
+	}
+	.bigLogo {
+		@apply right-0;
+		width: 23px;
+		top: 57px;
+	}
+}
