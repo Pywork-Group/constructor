@@ -26,6 +26,8 @@ const ConstructorSlider: FC<IConstructorSlider> = ({
 	shorts,
 	goTo,
 }) => {
+	const CustomSlider = Slider as any
+
 	return (
 		<div className={styles.wrapper}>
 			<ConstructorSliderNavigation
@@ -49,7 +51,7 @@ const ConstructorSlider: FC<IConstructorSlider> = ({
 						isConstructor ? styles.custom : undefined
 					)}
 				>
-					<Slider className={styles.swiper} {...settings} ref={sliderRef}>
+					<CustomSlider ref={sliderRef} className={styles.swiper} {...settings}>
 						<ConstructorSliderBuilder
 							shirt={shirt}
 							shorts={shorts}
@@ -59,7 +61,7 @@ const ConstructorSlider: FC<IConstructorSlider> = ({
 						{examples.map((example, index) => (
 							<ConstructorSliderExample key={index} example={example} />
 						))}
-					</Slider>
+					</CustomSlider>
 				</div>
 				{isConstructor ? (
 					<ConstructorSliderShare />
