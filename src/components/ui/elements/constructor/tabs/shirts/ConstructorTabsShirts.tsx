@@ -139,20 +139,7 @@ const ConstructorTabsShirts: FC<IConstructorShirts> = ({
 						}
 					/>
 					<Select
-						className={styles.select}
-						variant="colors"
-						data={CONSTRUCTOR_COLORS}
-						label="Цвет логотипа 2K Sport"
-						value={state.shirtLogoColor}
-						onChange={(color) =>
-							setState((prev) => ({
-								...prev,
-								shirtLogoColor: color,
-							}))
-						}
-					/>
-					<Select
-						className={styles.select}
+						className={formatClassName(styles.select, styles.full)}
 						variant="options"
 						data={CONSTRUCTOR_SHIRT_FONTS}
 						label="Шрифт"

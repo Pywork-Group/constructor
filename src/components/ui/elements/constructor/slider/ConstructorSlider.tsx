@@ -2,7 +2,7 @@ import { SHIRTS, SHORTS } from '@/base/base.data'
 import type { IConstructorSlider } from '@/shared/interfaces/elements/constructor/constructor.interface'
 import { formatClassName } from '@/utils/formats/class-name/format-class-name.util'
 import { type FC } from 'react'
-import SlickSlider from 'react-slick'
+import Slider from 'react-slick'
 import 'slick-carousel/slick/slick-theme.css'
 import 'slick-carousel/slick/slick.css'
 import ConstructorSliderBuilder from './builder/ConstructorSliderBuilder'
@@ -49,7 +49,7 @@ const ConstructorSlider: FC<IConstructorSlider> = ({
 						isConstructor ? styles.custom : undefined
 					)}
 				>
-					<SlickSlider className={styles.swiper} {...settings} ref={sliderRef}>
+					<Slider className={styles.swiper} {...settings} ref={sliderRef}>
 						<ConstructorSliderBuilder
 							shirt={shirt}
 							shorts={shorts}
@@ -59,7 +59,7 @@ const ConstructorSlider: FC<IConstructorSlider> = ({
 						{examples.map((example, index) => (
 							<ConstructorSliderExample key={index} example={example} />
 						))}
-					</SlickSlider>
+					</Slider>
 				</div>
 				{isConstructor ? (
 					<ConstructorSliderShare />

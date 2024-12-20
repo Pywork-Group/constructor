@@ -45,7 +45,7 @@ const ConstructorSliderBuilder: FC<IConstructorPick> = ({
 								height={16}
 								alt=""
 							/> */}
-							<img src={logo.src} width={64} height={16} />
+							<img src={logo.src} />
 						</div>
 						{state.shirtChestNumber && (
 							<span
@@ -111,7 +111,7 @@ const ConstructorSliderBuilder: FC<IConstructorPick> = ({
 								height={16}
 								alt=""
 							/> */}
-							<img src={logo.src} width={64} height={16} />
+							<img src={logo.src} />
 						</div>
 						{state.shirtLastName && (
 							<span

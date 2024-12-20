@@ -45,14 +45,17 @@
 }
 .shirt.first .logo {
 	top: 70px;
-	left: 48px;
+	left: 50px;
+	width: 52px;
 }
 .short.first .logo {
-	bottom: 13px;
-	left: 0px;
+	bottom: 28px;
+	left: 12px;
+	width: 52px;
 }
 .shirt.last .logo {
-	top: 18px;
+	top: 23px;
+	width: 69px;
 }
 .lastName {
 	@apply whitespace-nowrap text-6lg;
@@ -86,8 +89,13 @@
 		max-width: 185px;
 
 		&.first .logo {
-			top: 55px;
-			left: 32px;
+			top: 60px;
+			left: 39px;
+			width: 41px;
+		}
+
+		&.last .logo {
+			width: 54px;
 		}
 	}
 	.smallLogo {
@@ -96,6 +104,12 @@
 	}
 	.short {
 		max-width: 125px;
+
+		&.first .logo {
+			bottom: 23px;
+			left: 8px;
+			width: 39px;
+		}
 	}
 }
 
@@ -114,14 +128,14 @@
 		max-width: 85px;
 
 		&.first .logo {
-			width: 34px;
-			top: 22px;
-			left: 10px;
+			width: 20px;
+			top: 25px;
+			left: 16px;
 		}
 
 		&.last .logo {
-			width: 34px;
-			top: 5px;
+			width: 27px;
+			top: 10px;
 		}
 
 		.number {
@@ -148,9 +162,9 @@
 		}
 
 		&.first .logo {
-			width: 34px;
-			bottom: 5px;
-			left: -2px;
+			width: 22px;
+			bottom: 13px;
+			left: 4px;
 		}
 	}
 	.shortsLogo {

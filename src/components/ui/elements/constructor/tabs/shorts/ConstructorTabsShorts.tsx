@@ -1,5 +1,6 @@
 import Shorts from '@/components/parts/shorts/Shorts'
 import type { IConstructorShorts } from '@/shared/interfaces/elements/constructor/constructor.interface'
+import { formatClassName } from '@/utils/formats/class-name/format-class-name.util'
 import { useMemo, useState, type FC } from 'react'
 import Select from '../../../select/Select'
 import Switch from '../../../switch/Switch'
@@ -74,7 +75,7 @@ const ConstructorTabsShorts: FC<IConstructorShorts> = ({
 					</div>
 					<div className={styles.selects}>
 						<Select
-							className={styles.select}
+							className={formatClassName(styles.select, styles.full)}
 							variant="colors"
 							data={CONSTRUCTOR_COLORS}
 							label="Цвет номера:"
@@ -83,19 +84,6 @@ const ConstructorTabsShorts: FC<IConstructorShorts> = ({
 								setState((prev) => ({
 									...prev,
 									shortsTextsColor: color,
-								}))
-							}
-						/>
-						<Select
-							className={styles.select}
-							variant="colors"
-							data={CONSTRUCTOR_COLORS}
-							label="Цвет логотипа 2К:"
-							value={state.shortsLogoColor}
-							onChange={(color) =>
-								setState((prev) => ({
-									...prev,
-									shortsLogoColor: color,
 								}))
 							}
 						/>
