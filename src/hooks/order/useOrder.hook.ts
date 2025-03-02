@@ -33,14 +33,6 @@ export const useOrder = (state: TypeConstructorState) => {
 			return
 		}
 
-		const divElement = document.getElementById('builder')
-
-		const preview = divElement
-			? await html2canvas(divElement).then((canvas) => {
-					setPreview(canvas.toDataURL('image/png'))
-			  })
-			: null
-
 		try {
 			setIsPending(true)
 
