@@ -41,6 +41,11 @@ export const useOrder = (state: TypeConstructorState) => {
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					...data,
+					...(data.preview
+						? {
+								preview: await blobToBase64(data.preview),
+						  }
+						: {}),
 					...(data.design
 						? {
 								design: await blobToBase64(data.design),
