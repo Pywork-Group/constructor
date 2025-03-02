@@ -33,6 +33,14 @@ export const useOrder = (state: TypeConstructorState) => {
 			return
 		}
 
+		const divElement = document.getElementById('builder')
+
+		const preview = divElement
+			? await html2canvas(divElement).then((canvas) => {
+					setPreview(canvas.toDataURL('image/png'))
+			  })
+			: null
+
 		try {
 			setIsPending(true)
 
@@ -41,9 +49,9 @@ export const useOrder = (state: TypeConstructorState) => {
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					...data,
-					...(data.preview
+					...(preview
 						? {
-								preview: await blobToBase64(data.preview),
+								preview: await blobToBase64(preview),
 						  }
 						: {}),
 					...(data.design
